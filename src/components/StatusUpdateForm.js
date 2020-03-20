@@ -11,7 +11,7 @@ import Avatar from './Avatar';
 import Card from './Card';
 import Video from './Video';
 import Audio from './Audio';
-import EmojiPicker from './EmojiPicker';
+//import EmojiPicker from './EmojiPicker';
 import {
   ImageUploadButton,
   FileUploadButton,
@@ -777,7 +777,9 @@ class StatusUpdateFormInner extends React.Component<PropsInner, State> {
                       multiple
                     />
                   </div>
+                  {/*
                   <EmojiPicker onSelect={this._onSelectEmoji} />
+                  */}
                   {this.props.FooterItem}
                 </div>
                 <Button

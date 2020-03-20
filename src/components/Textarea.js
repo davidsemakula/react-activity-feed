@@ -3,7 +3,7 @@ import * as React from 'react';
 
 import { LoadingIndicator } from 'react-file-utils';
 
-import { emojiIndex } from 'emoji-mart';
+//import { emojiIndex } from 'emoji-mart';
 import ReactTextareaAutocomplete from '@webscopeio/react-textarea-autocomplete';
 import type { Trigger, ReactRefObjectOrFunction } from '../types';
 
@@ -49,10 +49,11 @@ export default class Textarea extends React.Component<Props> {
         loadingComponent={LoadingIndicator}
         trigger={{
           ':': {
-            dataProvider: (token) => {
-              const emojis = emojiIndex.search(token) || [];
-              return emojis.slice(0, 10);
-            },
+            dataProvider: (token) => 
+              //const emojis = emojiIndex.search(token) || [];
+              //return emojis.slice(0, 10);
+               []
+            ,
             component: AutocompleteItem,
             output: (item) => ({
               key: item.id,
