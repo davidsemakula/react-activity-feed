@@ -94,3 +94,6 @@ export { default as Panel } from './components/Panel';
 export { default as PanelHeading } from './components/PanelHeader';
 export { default as PanelFooter } from './components/PanelFooter';
 export { default as PanelContent } from './components/PanelContent';
+
+// Component utils
+export * as utils from './utils';
