@@ -96,4 +96,5 @@ export { default as PanelFooter } from './components/PanelFooter';
 export { default as PanelContent } from './components/PanelContent';
 
 // Component utils
-export * as utils from './utils';
+import * as utils from './utils';
+export { utils };
