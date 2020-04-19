@@ -91,6 +91,8 @@ type Props = {|
   placeholder: string,
   /** The name of the action */
   action: string,
+  /** Add custom avatar component */
+  AvatarItem?: React.Node,
 |};
 
 /**
@@ -620,7 +622,7 @@ class StatusUpdateFormInner extends React.Component<PropsInner, State> {
             <PanelContent>
               <div style={{ display: 'flex' }}>
                 <React.Fragment>
-                  {userData.profileImage && (
+                  {props.AvatarItem || userData.profileImage && (
                     <div style={{ marginRight: '16px' }}>
                       <Avatar
                         image={
