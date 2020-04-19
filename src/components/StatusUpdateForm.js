@@ -87,6 +87,10 @@ type Props = {|
   innerRef?: ReactRefObjectOrFunction<HTMLTextAreaElement>,
   /** The header to display */
   Header: React.Node,
+  /** The placeholder to display in textarea */
+  placeholder: string,
+  /** The name of the action */
+  action: string,
 |};
 
 /**
@@ -101,6 +105,8 @@ export default class StatusUpdateForm extends React.Component<Props> {
     activityVerb: 'post',
     modifyActivityData: (d: {}) => d,
     Header: <Title>New Post</Title>,
+    placeholder: 'Type your post... ',
+    action: 'Post',
   };
 
   render() {
@@ -608,7 +614,9 @@ class StatusUpdateFormInner extends React.Component<PropsInner, State> {
       <Panel>
         <form onSubmit={this.onSubmitForm}>
           <ImageDropzone handleFiles={this._uploadNewFiles}>
-            <PanelHeading>{this.props.Header}</PanelHeading>
+            {this.props.Header && (
+              <PanelHeading>{this.props.Header}</PanelHeading>
+            )}
             <PanelContent>
               <div style={{ display: 'flex' }}>
                 <React.Fragment>
@@ -628,7 +636,7 @@ class StatusUpdateFormInner extends React.Component<PropsInner, State> {
                 </React.Fragment>
                 <Textarea
                   innerRef={this.textInputRef}
-                  placeholder="Type your post... "
+                  placeholder={this.props.placeholder}
                   value={this.state.text}
                   onChange={this._onChange}
                   trigger={this.props.trigger}
@@ -788,7 +796,7 @@ class StatusUpdateFormInner extends React.Component<PropsInner, State> {
                   loading={this.state.submitting}
                   disabled={!this._canSubmit()}
                 >
-                  Post
+                  {this.props.action}
                 </Button>
               </div>
             </PanelFooter>
