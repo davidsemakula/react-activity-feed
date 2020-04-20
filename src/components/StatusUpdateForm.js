@@ -622,7 +622,7 @@ class StatusUpdateFormInner extends React.Component<PropsInner, State> {
             <PanelContent>
               <div style={{ display: 'flex' }}>
                 <React.Fragment>
-                  {props.AvatarItem || userData.profileImage && (
+                  {this.props.AvatarItem || userData.profileImage && (
                     <div style={{ marginRight: '16px' }}>
                       <Avatar
                         image={
